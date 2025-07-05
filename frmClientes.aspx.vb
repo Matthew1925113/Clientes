@@ -57,7 +57,7 @@ Public Class frmClientes
                     .Apellido = TxtApellidos.Text,
                     .Apellido2 = TxtApellido2.Text,
                     .Email = txtEmail.Text,
-                    .Telefono = txtTelefono.Text
+                    .Telefono = Convert.ToInt32(txtTelefono.Text).ToString()
                 }
             Dim resultado As String = DBClientes.CreateClientes(cliente)
             LblMensaje.Text = resultado
@@ -69,11 +69,12 @@ Public Class frmClientes
                     .Apellido = TxtApellidos.Text,
                     .Apellido2 = TxtApellido2.Text,
                     .Email = txtEmail.Text,
-                    .Telefono = txtTelefono.Text
+                    .Telefono = Convert.ToInt32(txtTelefono.Text).ToString()
                 }
             Dim resultado As String = DBClientes.UpdateCliente(IDCliente.Value, cliente)
             LblMensaje.Text = resultado
             LimpiarFormulario()
+            CargarClientes()
             IDCliente.Value = " "
         End If
     End Sub

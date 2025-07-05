@@ -4,7 +4,7 @@ Public Class DBClientes
     Private ReadOnly connectionString As String = ConfigurationManager.ConnectionStrings("CLIENTESDBConnectionString").ConnectionString
     Public Function CreateClientes(cliente As Clientes) As String
         Try
-            Dim query As String = "INSERT INTO CLIENTES (NOMBRES, APELLIDO1, APELLIDO2, EMAIL, TELEFONO) 
+            Dim query As String = "INSERT INTO CLIENTES (NOMBRE, APELLIDO1, APELLIDO2, EMAIL, TELEFONO) 
             VALUES (@Nombre, @Apellido1, @Apellido2, @Email, @Telefono)"
             Dim parameters As New List(Of SqlParameter) From {
                 New SqlParameter("@Nombre", cliente.Nombre),
@@ -52,8 +52,9 @@ Public Class DBClientes
 
     Friend Function UpdateCliente(id As String, cliente As Clientes) As String
         Try
-            Dim query As String = "UPDATE CLIENTES SET NOMBRE = @Nombre, APELLIDO = @Apellidos, APELLIDO2 = @Apellido2, EMAIL = @Email, TELEFONO = @telefono WHERE CLIENTESID = @Id"
+            Dim query As String = "UPDATE CLIENTES SET NOMBRE = @Nombre, APELLIDO = @Apellido, APELLIDO2 = @Apellido2, EMAIL = @Email, TELEFONO = @telefono WHERE CLIENTESID = @Id"
             Dim parameters As New List(Of SqlParameter) From {
+                New SqlParameter("@Id", id),
                 New SqlParameter("@Nombre", cliente.Nombre),
                 New SqlParameter("@Apellido1", cliente.Apellido),
                 New SqlParameter("@Apellido2", cliente.Apellido2),
@@ -69,7 +70,7 @@ Public Class DBClientes
             End Using
             Return "Cliente actualizado exitosamente."
         Catch ex As Exception
-            Return "Error al actualizar el empleado: " & ex.Message
+            Return "Error al actualizar el cliente: " & ex.Message
         End Try
     End Function
 

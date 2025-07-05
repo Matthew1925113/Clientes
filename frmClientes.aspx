@@ -41,14 +41,14 @@
         
         <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
     </div>
-    <asp:GridView ID="gvDatos" runat="server" DataSourceID="SqlDataSource2" 
+    <asp:GridView ID="gvDatos" runat="server" 
         OnSelectedIndexChanged ="gvDatos_SelectedIndexChanged"
         OnRowDeleting ="gvDatos_RowDeleting"
         AllowPaging ="true" AutoGenerateColumns="False" DataKeyNames="CLIENTESID" Width="794px">
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
             <asp:BoundField DataField="CLIENTESID" HeaderText="CLIENTESID" InsertVisible="False" ReadOnly="True" SortExpression="CLIENTESID" />
-            <asp:BoundField DataField="NOMBRES" HeaderText="NOMBRES" SortExpression="NOMBRES" />
+            <asp:BoundField DataField="NOMBRE" HeaderText="NOMBRE" SortExpression="NOMBRE" />
             <asp:BoundField DataField="APELLIDO1" HeaderText="APELLIDO1" SortExpression="APELLIDO1" />
             <asp:BoundField DataField="APELLIDO2" HeaderText="APELLIDO2" SortExpression="APELLIDO2" />
             <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL" />
@@ -56,7 +56,6 @@
             <asp:CommandField ShowDeleteButton="True" />
         </Columns>
 </asp:GridView>
-<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CLIENTESDBConnectionString %>" ProviderName="<%$ ConnectionStrings:CLIENTESDBConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [CLIENTES]"></asp:SqlDataSource>
 
 
 
