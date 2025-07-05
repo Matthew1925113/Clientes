@@ -1,29 +1,28 @@
 ﻿Public Class Clientes
     Protected _ClienteId As Integer
     Protected _Nombre As String
-    Protected _Apellidos As String
+    Protected _Apellido As String
+    Protected _Apellido2 As String
     Protected _Email As String
     Protected _Telefono As String
 
     Public Sub New()
-        _ClienteId = 0
-        _Nombre = String.Empty
-        _Apellidos = String.Empty
-        _Email = String.Empty
-        _Telefono = String.Empty
+        ClienteId = 0
+        Nombre = String.Empty
+        Apellido = String.Empty
+        Apellido2 = String.Empty
+        Email = String.Empty
+        Telefono = String.Empty
     End Sub
 
-    Public Sub New(clienteId As Integer, nombre As String, apellidos As String, email As String, telefono As String)
+    Public Sub New(clienteId As Integer, nombre As String, apellido As String, apellido2 As String, email As String, telefono As String)
         Me.ClienteId = clienteId
         Me.Nombre = nombre
-        Me.Apellidos = apellidos
+        Me.Apellido = apellido
+        Me.Apellido2 = apellido2
         Me.Email = email
         Me.Telefono = telefono
     End Sub
-
-    Public Function NombreCompleto() As String
-        Return $"{_Nombre} {_Apellidos}"
-    End Function
 
     Public Property ClienteId As Integer
         Get
@@ -43,12 +42,21 @@
         End Set
     End Property
 
-    Public Property Apellidos As String
+    Public Property Apellido As String
         Get
-            Return _Apellidos
+            Return _Apellido
         End Get
         Set(value As String)
-            _Apellidos = value
+            _Apellido = value
+        End Set
+    End Property
+
+    Public Property Apellido2 As String
+        Get
+            Return _Apellido2
+        End Get
+        Set(value As String)
+            _Apellido2 = value
         End Set
     End Property
 

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="frmClientes.aspx.vb" Inherits="Clientes.frmClientes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     
+      <asp:HiddenField ID="IDCliente" runat="server" />
     <div class="row mb-3">
         <div class="col-md-4">
 
@@ -15,18 +15,18 @@
             </div>
 
             <div class="form-group mb-3">
-                <label for="TxtApellido">Apellido</label>
+                <label for="TxtApellido">Apellido 2</label>
                 <asp:TextBox ID="TxtApellido2" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
 
 
             <div class="form-group mb-3">
-                <label for="txtEmail">Puestos</label>
+                <label for="txtEmail">Email</label>
                 <asp:TextBox TextMode ="Email" ID="txtEmail" runat="server"></asp:TextBox>
             </div>
 
             <div class="form-group mb-3">
-                <label for="txtTelefono">Sueldo</label>
+                <label for="txtTelefono">Telefono</label>
                 <asp:TextBox ID="txtTelefono" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
 

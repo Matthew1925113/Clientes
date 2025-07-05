@@ -215,6 +215,7 @@
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="DBCLIENTES\DBClientes.vb" />
     <Compile Include="frmClientes.aspx.designer.vb">
       <DependentUpon>frmClientes.aspx</DependentUpon>
     </Compile>
@@ -314,7 +315,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DBCLIENTES\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
