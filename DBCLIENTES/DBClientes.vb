@@ -52,11 +52,11 @@ Public Class DBClientes
 
     Friend Function UpdateCliente(id As String, cliente As Clientes) As String
         Try
-            Dim query As String = "UPDATE CLIENTES SET NOMBRE = @Nombre, APELLIDO = @Apellido, APELLIDO2 = @Apellido2, EMAIL = @Email, TELEFONO = @telefono WHERE CLIENTESID = @Id"
+            Dim query As String = "UPDATE CLIENTES SET NOMBRE = @Nombre, APELLIDO1 = @Apellido, APELLIDO2 = @Apellido2, EMAIL = @Email, TELEFONO = @telefono WHERE CLIENTESID = @Id"
             Dim parameters As New List(Of SqlParameter) From {
                 New SqlParameter("@Id", id),
                 New SqlParameter("@Nombre", cliente.Nombre),
-                New SqlParameter("@Apellido1", cliente.Apellido),
+                New SqlParameter("@Apellido", cliente.Apellido),
                 New SqlParameter("@Apellido2", cliente.Apellido2),
                 New SqlParameter("@Email", cliente.Email),
                 New SqlParameter("@Telefono", cliente.Telefono)
